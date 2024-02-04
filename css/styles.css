@@ -1,0 +1,87 @@
+* {
+    background-color: #DBAE58;
+}
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 20px;
+}
+
+.navigation {
+    flex: 2;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 75px;
+    padding-right: 130px;
+}
+
+.navigation a {
+    font-size: larger;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    color: #070504; 
+}
+
+.dropdown1,
+.dropdown2 {
+    position: relative;
+}
+
+.dropdown1-content,
+.dropdown2-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Position dropdown content below the button */
+    left: 0; /* Align with the left edge of the navigation links */
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown1:hover .dropdown1-content,
+.dropdown2:hover .dropdown2-content {
+    display: block;
+}
+
+/* Links inside dropdown */
+.dropdown1-content a,
+.dropdown2-content a{
+    color:#070504;
+    padding-top: 8px;
+    text-decoration: none;
+    display: block;
+    background-color: antiquewhite;
+    text-align: left;
+}
+
+.dropdown1-content a:hover,
+.dropdown2-content a:hover {
+    color:#f9f9f9;
+    background-color: #eca239;
+}
+
+
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: larger;
+    color: #070504;
+}
+
+.MissionStatement{
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    text-align: center;
+}
+
+.Description{
+    text-align: center;
+}
+
+.Images{
+    display: flex;
+    align-items: center;
+}
