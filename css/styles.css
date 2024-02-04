@@ -112,23 +112,19 @@ p {
 }
 
 
-.button-container button {
+.button-container .button {
     padding: 10px 20px; /* Adjust padding as needed */
     background-color: rgba(255, 194, 12, 0.92); /* Translucent yellow background color */
     border: none; /* Remove button border */
     border-radius: 15px; /* Add border radius */
     cursor: pointer; /* Add pointer cursor on hover */
     text-decoration: none;
-}
-.button-container button a{
     font-size: large;
     color: rgb(0, 0, 0);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-decoration: none;
-    background: none;
 }
 
-.button-container button:hover {
+.button-container .button:hover {
     background-color: #eca239; /* Button background color on hover */
 }
 
