@@ -131,3 +131,101 @@ p {
 #Author p{
     font-size: smaller;
 }
+
+/* Gallery.html styling */
+
+#gallery_main {
+    gap: 20px; /* Adjust gap between columns */
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {
+    display: flex;
+    justify-content: center; /* Center-align the columns */
+    align-items: center; /* Center-align the columns */
+    margin: 20px; /* Margin around the row of columns */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both; /* Clear floated elements */
+}
+
+/* Styling for columns (recipe cards) */
+.column {
+    width: 30%; /* Set width for each column (card) */
+    padding: 0 10px; /* Padding around each column */
+  }
+
+.holder {
+    box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2); /* Box shadow for cards */
+    width: auto;
+    height: auto; 
+    padding: 10px; /* Padding within each card */
+    border-radius: 9px; /* Add rounded corners to cards */
+    transition: 0.3s;
+}
+
+.holder:hover {
+    background-color: #1d1b1b00; /* Change background color on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add box shadow on hover */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Add smooth transition effect */
+    transform: scale(1.05);
+}
+
+.zoomed-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the image fits within the viewport */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    z-index: 999; /* Ensure the zoomed image appears above other content */
+    cursor: pointer; /* Show pointer cursor when hovering over the image */
+}
+
+.arrow {
+    position: fixed;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    z-index: 1001; /* Ensure arrows appear above other elements */
+}
+
+.arrow:hover{
+    transform: scale(1.1);
+}
+
+/* Style for left arrow button */
+.left {
+    left: 15px;
+}
+
+/* Style for right arrow button */
+.right {
+    right: 15px;
+}
+
+
+/* Responsive style for smaller screen */
+
+@media only screen and (max-width: 750px){
+    .row {
+        flex-direction: column; /* Change to a single column layout */
+        align-items: center; /* Center-align the columns */
+    }
+
+    .column {
+        width: 80%; /* Set width for each column (card) to 100% for single column layout */
+        margin: 10px 0; /* Add margin between rows */
+    }
+}
