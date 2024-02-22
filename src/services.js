@@ -57,6 +57,14 @@ holders.forEach((holder, index) => {
     bannerText.style.left = "50%"; // Center horizontally
     
 
+    const hlinkButtons = document.getElementsByClassName("hlink");
+    [...hlinkButtons].forEach((button, index) => {
+        button.addEventListener("click", function() {
+            window.location.href = ServiceItems[index].href;
+        });
+    });
+
+
     let transformValue;
     let linkTransform;
     let linkWidth;
@@ -98,3 +106,4 @@ function redirect(event){
     const url = link.getAttribute("href");
     window.location.href = url;
 }
+
