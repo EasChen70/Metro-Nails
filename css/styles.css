@@ -244,6 +244,61 @@ p {
     right: 15px;
 }
 
+#services_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 80px;
+    width: 50%;
+}
+
+.manicure-services,
+.pedicure-services,
+.spacombo-services{
+    width: 100%;
+    min-height: 145px;
+    min-width: 615px;
+    margin-top: 15px;
+    display: flex;
+    background-color: #989898;
+    border-radius: 5%;
+    flex-direction: row-reverse;
+}
+
+
+.holder-services{
+    border-radius: 5%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    align-items: center;
+    background-color: #989898;
+}
+
+.hlink,
+.booking{
+    width: 60%; /* Adjust the width as desired */
+    height: 50px; /* Adjust the height as desired */
+    margin: 15px 0 10px 55px;; /* Add some space between buttons */
+    padding: 5px; /* Add padding inside the buttons */
+    background-color: #3d3d41; /* Set background color */
+    color: #fff; /* Set text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    font-size: 16px; /* Adjust font size */
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+
+.hlink a {
+    color: rgb(255, 255, 255); 
+    text-decoration: none; 
+    background-color: transparent;
+}
+
+
 
 /* Responsive style for smaller screen */
 
@@ -256,5 +311,15 @@ p {
     .column {
         width: 80%; /* Set width for each column (card) to 100% for single column layout */
         margin: 10px 0; /* Add margin between rows */
+    }
+
+
+    #services_main {
+        width: 50%;
+        min-width: none;
+    }
+    .service {
+        width: 50%;
+        min-width: none;
     }
 }
