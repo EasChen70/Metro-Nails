@@ -52,18 +52,26 @@ holders.forEach((holder, index) => {
 
     const link = document.createElement("a"); // Create anchor element
     link.href = currentTextItem.href; // Set the href attribute
-    bannerText.appendChild(link);
+    
     bannerText.style.position = "absolute"; // Add position absolute
     bannerText.style.left = "50%"; // Center horizontally
     
 
     let transformValue;
+    let linkTransform;
+    let linkWidth;
     if (index === 0) {
         transformValue = "translate(-163%, 130%)";
+        linkTransform = "translate(-322%, 200%)";
+        linkWidth = "120px";
     } else if (index === 1) {
         transformValue = "translate(-177%, 130%)";
+        linkTransform = "translate(-360%, 205%)";
+        linkWidth = "110px"; 
     } else {
         transformValue = "translate(-142%, 130%)";
+        linkTransform = "translate(-262%, 210%)";
+        linkWidth = "141px";
     }
     bannerText.style.transform = transformValue; // Center horizontally
     bannerText.style.backgroundColor = "transparent";
@@ -71,15 +79,18 @@ holders.forEach((holder, index) => {
     bannerText.style.color = "azure"; // Set text color to white
     bannerText.style.textShadow = "-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black"; 
     
-    link.style.width = "100%";
-    link.style.height = "100%";
-    link.style.transform = "translate(-100%, 0%)";
+    link.style.display = "block";
+    link.style.width = linkWidth;
+    link.style.height = "27px";
+    link.style.transform = linkTransform;
     link.style.position = "absolute";
-    link.style.opacity = "0";
+    link.style.opacity = 0;
+    // link.style.opacity = "0";
     link.addEventListener("click", redirect);
 
     holder.appendChild(img); 
     holder.appendChild(bannerText);
+    holder.appendChild(link);
 });
 
 function redirect(event){

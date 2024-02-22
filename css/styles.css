@@ -316,10 +316,8 @@ p {
 
     #services_main {
         width: 50%;
-        min-width: none;
     }
     .service {
         width: 50%;
-        min-width: none;
     }
 }
