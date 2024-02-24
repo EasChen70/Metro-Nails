@@ -16,83 +16,75 @@ const galleryItemsData = [
     { src: "assets/gallerypic6.jpg", caption: "Free To Use Image 6, from Pexel.com" }
 ];
 
-const holders = document.querySelectorAll(".holder");
-
-// Create an array of GalleryItem instances
-const galleryItems = galleryItemsData.map(data => new GalleryItem(data.src, data.caption));
-
 // Loop through each row, populate with image src from the GalleryItem instances
-holders.forEach((holder, index) => {
-    const img = document.createElement("img");
-    const currentGalleryItem = galleryItems[index % galleryItems.length];
-    img.src = currentGalleryItem.src;
-    img.alt = currentGalleryItem.caption; // Set alt attribute to the image caption
-    img.style.maxWidth = "100%";
-    img.style.height = "auto";
-    img.style.display = "block";
-    img.style.marginLeft = "auto";
-    img.style.marginRight = "auto";
-    holder.appendChild(img);
+$('.holder').each(function(index){
+    const img = $('<img>');
+    const currentGalleryItem = galleryItemsData[index % galleryItemsData.length];
+    img.attr("src", currentGalleryItem.src)
+       .attr("alt", currentGalleryItem.caption) // Set alt attribute to the image caption
+       .css({
+            "max-width": "100%",
+            "height": "auto",
+            "display": "block",
+            "margin-left": "auto",
+            "margin-right": "auto"
+       });
+    $(this).append(img);   
 
-    const tooltipContainer = document.createElement("div");
-    tooltipContainer.classList.add("tooltip");
+    const tooltipContainer = $('<div>').addClass("tooltip");
     // Append image to tooltip container
-    tooltipContainer.appendChild(img);
-    // Create tooltip text
-    const tooltipText = document.createElement("span");
-    tooltipText.classList.add("tooltiptext");
-    tooltipText.textContent = img.alt;
+    tooltipContainer.append(img);
+
+    // Create tooltip text   
+    const tooltipText = $('<span>').addClass("tooltiptext");
+    tooltipText.text(img.attr("alt"));
     // Append tooltip text to tooltip container
-    tooltipContainer.appendChild(tooltipText);
+    tooltipContainer.append(tooltipText);
     // Append tooltip container to holder
-    holder.appendChild(tooltipContainer);
+    $(this).append(tooltipContainer);
 
-
-    img.addEventListener('click', function(){
-        const zoomedimg = document.createElement('img');
-        zoomedimg.src = img.src;
-        zoomedimg.alt = img.alt; // Set alt attribute of zoomed image
-        zoomedimg.classList.add('zoomed-image');
+    img.on('click', function(){
+        const zoomedimg = $('<img>');
+        zoomedimg.attr("src", img.attr("src"))
+                 .attr("alt", img.attr("alt"))
+                 .addClass("zoomed-image");
 
         // add navigation arrows
-        const leftArrow = document.createElement('button');
-        const rightArrow = document.createElement('button');
-        leftArrow.classList.add('arrow', 'left');
-        rightArrow.classList.add('arrow', 'right');
-        leftArrow.innerHTML = '&#11164'; // Add left arrow symbol
-        rightArrow.innerHTML = '&#11166;'; // Add right arrow symbol
-        document.body.appendChild(leftArrow);
-        document.body.appendChild(rightArrow);
+        const leftArrow = $("<button>").addClass('arrow left').html('&#11164'); // Add left arrow symbol
+        const rightArrow = $("<button>").addClass('arrow right').html('&#11166'); // Add right arrow symbol
+        $("body").append(leftArrow).append(rightArrow);
 
         // initialize index for navigating images
         let currentindex = index;
 
         // event listeners for buttons
-        leftArrow.addEventListener('click', function(){
+        leftArrow.on('click', function(){
             navigate(-1);
         });
-        rightArrow.addEventListener('click', function(){
+
+        rightArrow.on('click', function(){
             navigate(1);
         });
-
+        
         //navigation function checks for bounds, and iterates index
         function navigate(direction){
             currentindex += direction;
             if(currentindex < 0){
-                currentindex = galleryItems.length - 1;
-            }else if(currentindex >= galleryItems.length){
+                currentindex = galleryItemsData.length - 1;
+            }else if(currentindex >= galleryItemsData.length){
                 currentindex = 0;
             }
-            zoomedimg.src = galleryItems[currentindex].src;
-            zoomedimg.alt = galleryItems[currentindex].caption; // Update alt attribute
+            zoomedimg.attr("src", galleryItemsData[currentindex].src) 
+                     .attr("alt", galleryItemsData[currentindex].caption); // Update alt attribute
         }
-
         //when user clicks out of zoomed image, remove the appended children
-        zoomedimg.addEventListener('click', function () {
-            document.body.removeChild(zoomedimg);
-            document.body.removeChild(leftArrow);
-            document.body.removeChild(rightArrow);
+        zoomedimg.on('click', function(){
+            zoomedimg.remove()
+            leftArrow.remove()
+            rightArrow.remove();
         });
-        document.body.appendChild(zoomedimg);
+        $("body").append(zoomedimg);
     });
 });
+
+
