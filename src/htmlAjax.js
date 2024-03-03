@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         dataForm.style.zIndex = "100";
         dataForm.style.transform = "translate(0%, -30%)";
         dataForm.style.borderRadius = "2%";
+        dataForm.style.overflow = "auto";
         if(!bookNow.parentNode.contains(document.querySelector(".data-form"))){
             bookNow.parentNode.insertBefore(dataForm, bookNow);
             loadData('data/data.html');
