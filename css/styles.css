@@ -307,6 +307,8 @@ p {
 .Service-Container{
     background-color: rgba(240, 255, 255, 0.74);
     display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-left: auto;
     margin-right: auto;
     align-items: center;
@@ -316,10 +318,39 @@ p {
     border-radius: 5%;
 }
 
-.bookingbutton{
-    margin-top: 90%;
-    margin-left: auto;
-    margin-right: auto;
+.bookingbutton {
+    flex-grow: 0;
+    margin: 20px auto; /* Add some margin for spacing */
+    padding: 10px 20px; /* Add padding for better visual appearance */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+    background-color: #bda505; /* Set background color */
+    color: #fff; /* Set text color */
+    font-size: 16px; /* Set font size */
+    font-weight: bold; /* Set font weight */
+    text-transform: uppercase; /* Convert text to uppercase */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Add transition for smoother hover effect */
+}
+
+.bookingbutton:hover {
+    background-color: #b37100; /* Darken background color on hover */
+}
+
+.Offered-Services, 
+.Service-Prices {
+    margin-top: 1%;
+    flex-basis: calc(50% - 10px);
+}
+
+.row-serv,
+.row-pri{
+    background-color: rgba(240, 255, 255, 0.74);
+    min-height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 /* Responsive style for smaller screen */
