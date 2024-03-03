@@ -30,13 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if(xhr.readyState === 4){
                 if(xhr.status === 200){
                     document.querySelector(".data-form").innerHTML = xhr.responseText;
-                    elements = dataForm.querySelectorAll("*");
-
-                    elements.array.forEach(element => {
-                        element.style.backgroundColor = "azure";
-                    });
-
-
                 } else{
                     console.error("Error:", xhr.statusText);
                 }
