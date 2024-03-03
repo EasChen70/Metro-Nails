@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         let info = document.createElement("p");
                             info.textContent = description;
                             dataForm.appendChild(info);
-                        let options = manicure.getElementsByTagName("options")[0].textContent;
+                        let options = manicure.getElementsByTagName("options")[0].getElementsByTagName("option");
                         let optionList = document.createElement("ul");
                             for(let j = 0; j < options.length; j++){
                                 let option = document.createElement("li");
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 optionList.appendChild(option);
                             }
                             dataForm.appendChild(optionList);
-                        let add = manicure.getElementsByTagName("add")[0].textContent;
+                        let add = manicure.getElementsByTagName("add")[0].getElementsByTagName("option");
                         let addonList = document.createElement("ul");
                             for(let k = 0; k < add.length; k++){
                                 let option = document.createElement("li");
@@ -66,15 +66,41 @@ document.addEventListener('DOMContentLoaded', function() {
                     for(let index = 0; index < pedicures.length; index++){
                         let pedicure = pedicures[index];
                         let type = pedicure.getElementsByTagName("type")[0].textContent;
+                        let service = document.createElement("h3")
+                            service.textContent = type;
+                            dataForm.appendChild(service);
                         let description = pedicure.getElementsByTagName("description")[0].textContent;
-                        let options = pedicure.getElementsByTagName("options")[0].textContent;
+                            let info = document.createElement("p");
+                            info.textContent = description;
+                            dataForm.appendChild(info);
+                        let options = pedicure.getElementsByTagName("options")[0].getElementsByTagName("option");
+                        let optionList = document.createElement("ul");
+                        for(let j = 0; j < options.length; j++){
+                            let option = document.createElement("li");
+                            option.textContent = options[j].textContent;
+                            optionList.appendChild(option);
+                        }
+                        dataForm.appendChild(optionList);
+
                     }
 
                     for(let index = 0; index < spacombos.length; index++){
                         let combo = spacombos[index];
                         let type = combo.getElementsByTagName("type")[0].textContent;
+                        let service = document.createElement("h3")
+                            service.textContent = type;
+                            dataForm.appendChild(service);
                         let description = combo.getElementsByTagName("description")[0].textContent;
-                        let options = combo.getElementsByTagName("options")[0].textContent;
+                            let info = document.createElement("p");
+                            info.textContent = description;
+                        let options = combo.getElementsByTagName("options")[0].getElementsByTagName("option");
+                        let optionList = document.createElement("ul");
+                        for(let j = 0; j < options.length; j++){
+                            let option = document.createElement("li");
+                            option.textContent = options[j].textContent;
+                            optionList.appendChild(option);
+                        }
+                        dataForm.appendChild(optionList);
                     }
 
 
