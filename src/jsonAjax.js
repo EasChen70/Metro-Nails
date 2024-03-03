@@ -31,6 +31,87 @@ document.addEventListener('DOMContentLoaded', function() {
                     let dataForm = document.querySelector(".data-form");
                     let jsonData = JSON.parse(xhr.responseText);
                     dataForm.innerHTML = jsonData;
+                    manicures = jsonData.manicures;
+                    pedicures = jsonData.pedicures;
+                    spacombos = jsonData.spacombos;
+
+                    manicures.forEach(manicure => {
+                        let service = Object.keys(manicure)[0];
+                            let selectedService = document.createElement("h3");
+                            selectedService.textContent = service;
+                            dataForm.appendChild(selectedService);
+                        let selected = manicure[service];
+                        selected.forEach(detail => {
+                            if (detail.Description){
+                                let info = document.createElement("p");
+                                info.textContent = detail.Description;
+                                dataForm.appendChild(info);
+                            }else if(detail.Options){
+                                let optionList = document.createElement("ul");
+                                detail.Options.forEach(option => {
+                                    let suboption = document.createElement("li");
+                                    suboption.textContent = option;
+                                    optionList.appendChild(suboption);
+                                    dataForm.appendChild(optionList);
+                                })
+                            }else if(detail.Add-Ons){
+                                let addonList = document.createElement("ul");
+                                detail.Add-Ons.forEach(option => {
+                                    let suboption = document.createElement("li");
+                                    suboption.textContent = option;
+                                    addonList.appendChild(suboption);
+                                    dataForm.appendChild(addonList);
+                                })
+                            }
+                        })
+                    })
+
+                    pedicures.forEach(pedicure => {
+                        let service = Object.keys(pedicure)[0];
+                            let selectedService = document.createElement("h3");
+                            selectedService.textContent = service;
+                            dataForm.appendChild(selectedService);
+                        let selected = pedicure[service];
+                        selected.forEach(detail =>{
+                            if (detail.Description){
+                                let info = document.createElement("p");
+                                info.textContent = detail.Description;
+                                dataForm.appendChild(info);
+                            }else if(detail.Options){
+                                let optionList = document.createElement("ul");
+                                detail.Options.forEach(option => {
+                                    let suboption = document.createElement("li");
+                                    suboption.textContent = option;
+                                    optionList.appendChild(suboption);
+                                    dataForm.appendChild(optionList);
+                                })
+                            }
+                        })
+                    })
+
+                    spacombos.forEach(combo => {
+                        let service = Object.keys(combo)[0];
+                            let selectedService = document.createElement("h3");
+                            selectedService.textContent = service;
+                            dataForm.appendChild(selectedService);
+                        let selected = combo[service];
+                        selected.forEach(detail =>{
+                            if (detail.Description){
+                                let info = document.createElement("p");
+                                info.textContent = detail.Description;
+                                dataForm.appendChild(info);
+                            }else if(detail.Options){
+                                let optionList = document.createElement("ul");
+                                detail.Options.forEach(option => {
+                                    let suboption = document.createElement("li");
+                                    suboption.textContent = option;
+                                    optionList.appendChild(suboption);
+                                    dataForm.appendChild(optionList);
+                                })
+                            }
+                        })
+                    })
+                    
                 } else{
                     console.error("Error:", xhr.statusText);
                 }
