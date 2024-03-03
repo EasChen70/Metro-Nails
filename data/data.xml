@@ -39,7 +39,7 @@
                 <options>
                     <option>Regular Polish</option>
                     <option>Shellac or Gel</option>
-                </option>            
+                </options>            
             </pedicure>
             <pedicure>
                 <type>Sport Pedicure</type>
@@ -47,7 +47,7 @@
                 <options>
                     <option>Regular Polish</option>
                     <option>Shellac or Gel</option>
-                </option>            
+                </options>            
             </pedicure>
             <pedicure>
                 <type>Spa Pedicure</type>
@@ -55,7 +55,7 @@
                 <options>
                     <option>Regular Polish</option>
                     <option>Shellac or Gel</option>
-                </option>            
+                </options>            
             </pedicure>
             <pedicure>
                 <type>Deluxe Pedicure</type>
@@ -63,7 +63,7 @@
                 <options>
                     <option>Regular Polish</option>
                     <option>Shellac or Gel</option>
-                </option>            
+                </options>            
             </pedicure>
             <pedicure>
                 <type>Luxury Pedicure</type>
@@ -71,7 +71,7 @@
                 <options>
                     <option>Regular Polish</option>
                     <option>Shellac or Gel</option>
-                </option>            
+                </options>            
             </pedicure>
             <pedicure>
                 <type>Metro Signature Pedicure</type>
@@ -79,7 +79,7 @@
                 <options>
                     <option>Regular Polish</option>
                     <option>Shellac or Gel</option>
-                </option>        
+                </options>        
             </pedicure>
         </pedicures>
 
