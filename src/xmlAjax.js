@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     let manicures = xmlDoc.getElementsByTagName("manicures")[0].getElementsByTagName("manicure");
                     let pedicures = xmlDoc.getElementsByTagName("pedicures")[0].getElementsByTagName("pedicure");
-                    let spacombos = xmlDoc.getElementsByTagName("spacombos")[0].getElementsByTagName("spacombos");
+                    let spacombos = xmlDoc.getElementsByTagName("spacombos")[0].getElementsByTagName("combo");
 
                     for(let index = 0; index < manicures.length; index++){
                         let manicure = manicures[index];
