@@ -54,9 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
                                     optionList.appendChild(suboption);
                                     dataForm.appendChild(optionList);
                                 })
-                            }else if(detail.Add-Ons){
+                            }else if(detail.AddOns){
                                 let addonList = document.createElement("ul");
-                                detail.Add-Ons.forEach(option => {
+                                detail.AddOns.forEach(option => {
                                     let suboption = document.createElement("li");
                                     suboption.textContent = option;
                                     addonList.appendChild(suboption);
