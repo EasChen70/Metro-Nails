@@ -1,7 +1,7 @@
 //when document is loaded
 document.addEventListener('DOMContentLoaded', function() {
     //get booking button found in service pages
-    let bookNow = document.getElementById("booking");
+    let bookNow = document.querySelector("booking");
     
     bookNow.addEventListener('click', function(){
         //create popup form when button clicked
