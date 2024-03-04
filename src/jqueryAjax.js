@@ -14,13 +14,13 @@ $(document).ready(function(){
             "transform": "translate(0%, -30%)",
             "border-radius": "2%",
             "overflow": "auto"
+        }).on('click', function(){
+            $(this).remove();
         });
         $(this).before(dataForm);
         loadData('data/data2.html');
     }
-    dataForm.on('click', function(){
-        $(this).remove();
-    })
+    
 });
 
     function loadData(filepath){
