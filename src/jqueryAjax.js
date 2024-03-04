@@ -1,4 +1,3 @@
-$(document).ready(function(){
     $("#bookingbutton").on('click', function(){
         const dataForm = $("<div>");
         dataForm.addClass("data-form");
@@ -23,4 +22,4 @@ $(document).ready(function(){
             $('.data-form').html(response);
         }})
     }
-})
+
