@@ -1,33 +1,35 @@
 //when document is loaded
 document.addEventListener('DOMContentLoaded', function() {
     //get booking button found in service pages
-    let bookNow = document.querySelector("booking");
-    
-    bookNow.addEventListener('click', function(){
-        //create popup form when button clicked
-        const dataForm = document.createElement("div");
-        //give a class name
-        dataForm.classList.add("data-form");
-        //style into simple white block
-        dataForm.style.height = "500px";
-        dataForm.style.width = "600px";
-        dataForm.style.backgroundColor = "azure";
-        dataForm.style.border = "2px solid"
-        dataForm.style.position = "fixed";
-        dataForm.style.zIndex = "100";
-        dataForm.style.transform = "translate(0%, -30%)";
-        dataForm.style.borderRadius = "2%";
-        dataForm.style.overflow = "auto";
-        //if the dataform isn't create yet, insert ontop of the button + load data
-        if(!bookNow.parentNode.contains(document.querySelector(".data-form"))){
-            bookNow.parentNode.insertBefore(dataForm, bookNow);
-            loadData('data/data.html');
-        };
-        //temporary resolution to exit out of form
-        dataForm.addEventListener('click', function(){
-            bookNow.parentNode.removeChild(dataForm);
+    let bookingbuttons = document.querySelectorAll(".booking");
+    bookingbuttons.forEach(function(bookNow){
+        bookNow.addEventListener('click', function(){
+            //create popup form when button clicked
+            const dataForm = document.createElement("div");
+            //give a class name
+            dataForm.classList.add("data-form");
+            //style into simple white block
+            dataForm.style.height = "500px";
+            dataForm.style.width = "600px";
+            dataForm.style.backgroundColor = "azure";
+            dataForm.style.border = "2px solid"
+            dataForm.style.position = "fixed";
+            dataForm.style.zIndex = "100";
+            dataForm.style.transform = "translate(0%, -30%)";
+            dataForm.style.borderRadius = "2%";
+            dataForm.style.overflow = "auto";
+            //if the dataform isn't create yet, insert ontop of the button + load data
+            if(!bookNow.parentNode.contains(document.querySelector(".data-form"))){
+                bookNow.parentNode.insertBefore(dataForm, bookNow);
+                loadData('data/data.html');
+            };
+            //temporary resolution to exit out of form
+            dataForm.addEventListener('click', function(){
+                bookNow.parentNode.removeChild(dataForm);
+            });
         });
-    });
+    })
+
 
 
     function loadData(filepath){
