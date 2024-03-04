@@ -1,7 +1,9 @@
 //when document is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    //get booking button found in service pages
+    //get booking buttons found in service pages
     let bookingbuttons = document.querySelectorAll(".booking");
+
+    //nodelist, so apply eventlistener to each element
     bookingbuttons.forEach(function(bookNow){
         bookNow.addEventListener('click', function(){
             //create popup form when button clicked
