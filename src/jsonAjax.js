@@ -29,11 +29,16 @@ document.addEventListener('DOMContentLoaded', function() {
             if(xhr.readyState === 4){
                 if(xhr.status === 200){
                     let dataForm = document.querySelector(".data-form");
+                    //parses json objects
                     let jsonData = JSON.parse(xhr.responseText);
+                    //get service objects
                     manicures = jsonData.manicures;
                     pedicures = jsonData.pedicures;
                     spacombos = jsonData.spacombos;
+                    //this part is a big redundant (code duplication) *note will clean up in future
 
+                    //for each manicure type, index is defined by the first key in the object, *w3school
+                    //everytime I am processing a part of the data, I am creating elements to store these into to later append
                     manicures.forEach(manicure => {
                         let service = Object.keys(manicure)[0];
                             let selectedService = document.createElement("h3");
@@ -46,7 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
                                 info.textContent = detail.Description;
                                 dataForm.appendChild(info);
                             }else if(detail.Options){
+                                //create list to store suboptions
                                 let optionList = document.createElement("ul");
+                                //looping through options array, create list item elements to store content
                                 detail.Options.forEach(option => {
                                     let suboption = document.createElement("li");
                                     suboption.textContent = option;
@@ -64,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             }
                         })
                     })
-
+                    //same logic
                     pedicures.forEach(pedicure => {
                         let service = Object.keys(pedicure)[0];
                             let selectedService = document.createElement("h3");
@@ -87,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             }
                         })
                     })
-
+                    //same logic
                     spacombos.forEach(combo => {
                         let service = Object.keys(combo)[0];
                             let selectedService = document.createElement("h3");

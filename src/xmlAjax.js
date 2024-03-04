@@ -29,14 +29,18 @@ document.addEventListener('DOMContentLoaded', function() {
             if(xhr.readyState === 4){
                 if(xhr.status === 200){
                     let xmlDoc = xhr.responseXML;
+                    //query select dataform class
                     let dataForm = document.querySelector(".data-form")
-                    
+                    //access first instance of specified tag in xml doc, then get the inner elements (*credit to stackoverflow https://stackoverflow.com/questions/71933358/how-to-retrieve-tags-inside-certain-tag-for-xml-using-getelementsbytagname-selec)
                     let manicures = xmlDoc.getElementsByTagName("manicures")[0].getElementsByTagName("manicure");
                     let pedicures = xmlDoc.getElementsByTagName("pedicures")[0].getElementsByTagName("pedicure");
                     let spacombos = xmlDoc.getElementsByTagName("spacombos")[0].getElementsByTagName("combo");
+                    //Note logic will be the same for pedicures and spacombos, just minus the add on array
 
+                    //for length of manicure, index each inner type
                     for(let index = 0; index < manicures.length; index++){
                         let manicure = manicures[index];
+                        //define the given tag names and create a html tag for it to be stored in
                         let type = manicure.getElementsByTagName("type")[0].textContent;
                         let service = document.createElement("h3")
                             service.textContent = type;
@@ -45,7 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         let info = document.createElement("p");
                             info.textContent = description;
                             dataForm.appendChild(info);
+                        //because options contains children, we also must define it as the first instance, then get inner elements
                         let options = manicure.getElementsByTagName("options")[0].getElementsByTagName("option");
+                        //create list to store data into
                         let optionList = document.createElement("ul");
                             for(let j = 0; j < options.length; j++){
                                 let option = document.createElement("li");
@@ -54,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             }
                             dataForm.appendChild(optionList);
                         let add = manicure.getElementsByTagName("add")[0].getElementsByTagName("option");
+                        //same thing with addons, done the same way because data could potentially scale
                         let addonList = document.createElement("ul");
                             for(let k = 0; k < add.length; k++){
                                 let option = document.createElement("li");
@@ -61,6 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
                                 addonList.appendChild(option);
                             }
                             dataForm.appendChild(addonList);
+                            
+                        //during the forloop, append to dataform
                     }
 
                     for(let index = 0; index < pedicures.length; index++){
