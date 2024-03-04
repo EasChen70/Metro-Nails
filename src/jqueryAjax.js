@@ -18,6 +18,9 @@ $(document).ready(function(){
         $(this).before(dataForm);
         loadData('data/data2.html');
     }
+    dataForm.on('click', function(){
+        $(this).remove();
+    })
 });
 
     function loadData(filepath){
