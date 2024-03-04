@@ -1,3 +1,4 @@
+$(document).ready(function(){
     $("#bookingbutton").on('click', function(){
         const dataForm = $("<div>");
         dataForm.addClass("data-form");
@@ -22,4 +23,4 @@
             $('.data-form').html(response);
         }})
     }
-
+})
