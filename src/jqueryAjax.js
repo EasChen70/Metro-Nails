@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $("#bookingbutton").on('click', function(){
+        if ($(".data-form").length === 0){
         const dataForm = $("<div>");
         dataForm.addClass("data-form");
         dataForm.css({
@@ -16,10 +17,11 @@ $(document).ready(function(){
         });
         $(this).before(dataForm);
         loadData('data/data2.html');
-    })
+    }
+});
 
     function loadData(filepath){
-        $.ajax({filepath, type: 'GET', success: function(response){
+        $.ajax({url: filepath, type: 'GET', success: function(response){
             $('.data-form').html(response);
         }})
     }
