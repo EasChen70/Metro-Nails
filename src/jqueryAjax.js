@@ -14,7 +14,7 @@ $(document).ready(function(){
             "border-radius": "2%",
             "overflow": "auto"
         });
-        $(this).before($dataForm);
+        $(this).before(dataForm);
         loadData('data/data2.html');
     })
 
