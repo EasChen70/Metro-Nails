@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 if(xhr.status === 200){
                     let dataForm = document.querySelector(".data-form");
                     let jsonData = JSON.parse(xhr.responseText);
-                    dataForm.innerHTML = jsonData;
                     manicures = jsonData.manicures;
                     pedicures = jsonData.pedicures;
                     spacombos = jsonData.spacombos;
