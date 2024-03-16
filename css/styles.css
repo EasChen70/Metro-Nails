@@ -353,6 +353,185 @@ p {
     text-align: center;
 }
 
+#about_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    width: 50%;
+}
+
+.aboutdescription{
+    background-color: rgba(240, 255, 255, 0.74);
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    min-height: 300px;
+    width: 100%;
+    border-style: solid;
+    border-radius: 5%;
+}
+
+.aboutcontainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    width: 77%;
+}
+
+.aboutlocation{
+    background-color: rgba(240, 255, 255, 0.74);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 200px;
+    width: 90%;
+    border-style: solid;
+    border-radius: 5%;
+}
+
+.operationhours{
+    background-color: rgba(240, 255, 255, 0.74);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 200px;
+    width: 60%;
+    border-style: solid;
+    border-radius: 5%;
+}
+
+
+.instagram-icon{
+    display: inline-block;
+    color:#070504;
+}
+
+
+.instagram-icon:hover {
+    transform: scale(1.15);
+}
+
+#contact_main,
+#giftcard_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    width: 50%;
+}
+
+.contactcontainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    width: 77%;
+}
+
+.contactdescription{
+    background-color: rgba(240, 255, 255, 0.74);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 200px;
+    width: 90%;
+    border-style: solid;
+    border-radius: 5%;
+}
+.contactus{
+    width: 100%;
+    margin-top: 2%;
+}
+.emailcontact{
+    background-color: rgba(240, 255, 255, 0.74);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 200px;
+    width: 90%;
+    border-style: solid;
+    border-radius: 5%;
+}
+
+.locationcontainer{
+    display: flex;
+}
+
+.locationinfo {
+    background-color: rgba(240, 255, 255, 0.74);
+    padding: 20px; 
+    border: 2px solid #000000; 
+    border-radius: 5%; 
+    width: 30%;
+    margin-left: 9%; 
+    margin-top: 3%;
+}
+
+.location,
+.hours {
+    background-color: transparent;
+    margin-bottom: 20px;
+    font-size: smaller;
+    color: #070504;
+}
+
+.lpara{
+    background-color: transparent;
+    font-size: medium;
+    font-weight: bold;
+}
+.minipara{
+    background-color: transparent;
+    font-size: medium;
+}
+
+ul {
+    background-color: transparent;
+    margin-top: 0; 
+    padding-left: 20px; 
+}
+
+li {
+    background-color: transparent;
+    list-style-type: none; 
+    font-size: medium;
+}
+
+#map{
+    background-color: transparent;
+    padding: 20px; 
+    border: 2px solid #000000; 
+    border-radius: 5%; 
+    width: 30%;
+    margin-left: 10%; 
+    margin-top: 3%;
+}
+
+#map * {
+    background-color: transparent;
+}
+
 /* Responsive style for smaller screen */
 
 @media only screen and (max-width: 750px){
