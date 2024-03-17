@@ -3,11 +3,10 @@ let marker;
 
 async function initMap() {
     const { Map } = await google.maps.importLibrary("maps");
-    
     let center = { lat: 41.81974411010742, lng: -71.39521026611328 };
     let zoom = 17;
 
-    map = new Map(document.getElementById("map"), {
+    map = new google.maps.Map(document.getElementById("map"), {
       center: center,
       zoom: zoom,
     });
@@ -18,4 +17,5 @@ async function initMap() {
         title: "Metro Nails",
     });
   }
-initMap();
+
+  initMap()
