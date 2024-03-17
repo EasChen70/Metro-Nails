@@ -280,16 +280,16 @@ p {
 
 .hlink,
 .booking{
-    width: 60%; /* Adjust the width as desired */
-    height: 50px; /* Adjust the height as desired */
-    margin: 15px 0 10px 55px;; /* Add some space between buttons */
-    padding: 5px; /* Add padding inside the buttons */
-    background-color: #3d3d41; /* Set background color */
-    color: #fff; /* Set text color */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Add border radius for rounded corners */
-    font-size: 16px; /* Adjust font size */
-    cursor: pointer; /* Show pointer cursor on hover */
+    width: 60%; 
+    height: 50px; 
+    margin: 15px 0 10px 55px;; 
+    padding: 5px; 
+    background-color: #3d3d41; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px; 
+    font-size: 16px; 
+    cursor: pointer; 
 }
 
 #manicure-main,
@@ -320,21 +320,21 @@ p {
 
 .bookingbutton {
     flex-grow: 0;
-    margin: 20px auto; /* Add some margin for spacing */
-    padding: 10px 20px; /* Add padding for better visual appearance */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Add border-radius for rounded corners */
-    background-color: #bda505; /* Set background color */
-    color: #fff; /* Set text color */
-    font-size: 16px; /* Set font size */
-    font-weight: bold; /* Set font weight */
-    text-transform: uppercase; /* Convert text to uppercase */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    transition: background-color 0.3s ease; /* Add transition for smoother hover effect */
+    margin: 20px auto; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    background-color: #bda505; 
+    color: #fff; 
+    font-size: 16px; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
 }
 
 .bookingbutton:hover {
-    background-color: #b37100; /* Darken background color on hover */
+    background-color: #b37100; 
 }
 
 .Offered-Services, 
