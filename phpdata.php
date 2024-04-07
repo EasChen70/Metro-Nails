@@ -15,12 +15,10 @@
         
         public function bookAppointment(){
             $this->status = 'Scheduled';
-            echo "Successfully Booked!";
         }
         
         public function cancelAppointment(){
             $this->status = 'Not Scheduled';
-            echo "Appointment Cancelled!";
         }
 
         // Setter for status
