@@ -5,6 +5,7 @@ declare(strict_types=1);
         return($length >= $min && $length <= $max);
     }
 
+    //makes sure phone number is 10 digits
     function validatePhone($phone){
         $phone = preg_replace('/[^0-9]/', '', $phone);
         return (strlen($phone) === 10);

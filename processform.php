@@ -2,6 +2,7 @@
 declare(strict_types=1);
 include 'validationfunctions.php';
 
+//initialized arrays
 $initialValues = array(
     'username' => '',
     'phone' => '',
@@ -9,6 +10,7 @@ $initialValues = array(
     'attendees' => '',
     'services' => array()
 );
+//error array
 $errors = array(
     'username' => '',
     'phone' => '',
@@ -16,7 +18,7 @@ $errors = array(
     'attendees' => '',
     'services' => ''
 );
-
+//error message
 $messages = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
