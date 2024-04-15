@@ -1,3 +1,4 @@
+<?php include 'cookies.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,10 +12,10 @@
     <!-- Header content, includes logo + navbar -->
     <header>
         <div class = "logo">
-            <a href = "index.html"><img src = "assets/OriginalLogo.png" alt= "Original Logo"></a>
+            <a href = "index.php"><img src = "assets/OriginalLogo.png" alt= "Original Logo"></a>
         </div>
         <div class = "navigation">
-            <a href = "index.html">Home</a>
+            <a href = "index.php">Home</a>
             <div class = "dropdown1">
                 <a href = "services.html">Services</a>
                 <div class = "dropdown1-content">
@@ -67,6 +68,9 @@
             </div>
         </div>
     </main>
+    <p style="font-size: 14px;"><?php echo $sessionMessage; ?></p>
+    <p style="font-size: 14px;"><?php echo $cookieMessage; ?></p>
+    <p style="font-size: 14px;"><a href="?terminate=true">Terminate Session</a></p>
     <!-- Footer -->
     <footer id = "Author">
         <p>Created by: Eason Chen</p>
