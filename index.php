@@ -1,4 +1,4 @@
-<?php include 'cookies.php'; ?>
+<?php include 'includes/cookies.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +9,8 @@
     <title>MetroNails Home</title>
 </head>
 <body>
-    <!-- Header content, includes logo + navbar -->
-    <header>
+        <!-- Header content, includes logo + navbar -->
+        <header>
         <div class = "logo">
             <a href = "index.php"><img src = "assets/OriginalLogo.png" alt= "Original Logo"></a>
         </div>
@@ -32,6 +32,7 @@
                 </div>
             </div>            
             <a href = "contact.html">Contact</a>
+            <a href = "accountinfo.php">Account</a>
         </div>
     </header>
     <!-- Main content of the page -->

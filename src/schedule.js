@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function(){
             }
         };
         // https://www.w3schools.com/php/php_ajax_php.asp
-        xhr.open('GET', `phpdata.php?type=${serviceType}`, true);
+        xhr.open('GET', `includes/phpdata.php?type=${serviceType}`, true);
         xhr.send();
     }
 })
