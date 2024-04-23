@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+include "databaseconnection.php";
 include 'validationfunctions.php';
 
 //initialized arrays
@@ -52,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Data Form</title>
 </head>
 <body>
-    <form action="processform.php" method="POST">
+    <form action="../Metro-Nails/includes/processform.php" method="POST">
         <label for="username">Name</label><br>
         <input type="text" id="username" name="username" required><br>
         <label for="phone">Phone</label><br>
@@ -70,6 +71,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </select><br><br>
 
         <input type="submit" value="Submit">
+        <?php
+        //A bit janky, the insert/retrieve will mostly be with accountinfo.php
+                if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+                    //https://www.php.net/manual/en/function.uniqid.php
+                    $ID = substr(uniqid('', true), 0, 5);
+                    $username = $initialValues['username'] ?? '';
+                    $phone = $initialValues['phone'] ?? '';
+                    $date = $initialValues['time'] ?? '';
+                    $attendees = $initialValues['attendees'] ?? '';
+                    //https://www.php.net/manual/en/function.implode.php
+                    $services = implode(', ', $initialValues['services']) ?? '';
+                    $sql = "INSERT INTO customers (ID, name, phone, date, attendees, service) VALUES (?, ?, ?, ?, ?, ?)";
+                    $stmt = pdo($pdo, $sql, [$ID, $username, $phone, $date, $attendees, $services]);
+                    if ($stmt->rowCount() > 0){
+                        echo "User data inserted successfully! Your ID is: " . $ID ;
+                    } else {
+                        echo "Error inserting user data.";
+                    }
+                }
+        
+        ?>
     </form>
 
     <?php

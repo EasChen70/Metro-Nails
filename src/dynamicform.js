@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function(){
             }
         };
         // Load data from processform.php
-        xhr.open('GET', 'processform.php', true);
+        xhr.open('GET', 'includes/processform.php', true);
         xhr.send();
     }
 })

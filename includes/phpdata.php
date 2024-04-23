@@ -1,5 +1,4 @@
 <?php 
-
     class Appointment{
         public $customerID;
         public $time;

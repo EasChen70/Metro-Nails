@@ -16,7 +16,9 @@
 
     //terminate function
     if (isset($_GET['terminate']) && $_GET['terminate'] === 'true') {
+        setcookie('cookiecounter', '', time() - 3600);
         $_SESSION = array(); //clear from superglobal
+        
         session_destroy();
     }
 ?>
