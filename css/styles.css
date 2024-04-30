@@ -367,6 +367,44 @@ p {
         margin: 10px 0; /* Add margin between rows */
     }
 
+    .navigation {
+        flex-direction: column; 
+        padding: 20px 0; 
+    }
+
+    .navigation a {
+        font-size: medium; 
+    }
+
+    .dropdown1-content,
+    .dropdown2-content {
+        top: initial; 
+        left: 0; 
+        min-width: 100%; 
+        box-shadow: none; 
+    }
+
+    .dropdown1,
+    .dropdown2 {
+        position: static; 
+    }
+
+    .dropdown1:hover .dropdown1-content,
+    .dropdown2:hover .dropdown2-content {
+        display: block; 
+    }
+
+    .dropdown1-content a,
+    .dropdown2-content a {
+        padding: 10px; 
+        margin: 5px 0; 
+    }
+
+    .dropdown1-content a,
+    .dropdown2-content a {
+        text-align: center;
+    }
+
 
     #services_main {
         width: 50%;
