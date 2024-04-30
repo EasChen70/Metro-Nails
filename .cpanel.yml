@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/easonchen/public_html/
+    - export DEPLOYPATH=/home/easonchen/public_html/Metro-Nails
     - /bin/cp -R * $DEPLOYPATH
