@@ -89,6 +89,7 @@ include "includes/databaseconnection.php";
                     $name = $_POST['name'] ?? ''; 
                     $phone = $_POST['phone'] ?? ''; 
                     // isset checks which button is clicked, its a bit janky 
+                    // https://www.php.net/manual/en/function.isset.php
                     if(isset($_POST['Retrieve'])){
                         $sql = "SELECT Date, Attendees, Service FROM customers WHERE ID = ? AND Name = ? AND Phone = ?";
                         $stmt = pdo($pdo, $sql, [$id, $name, $phone]);
