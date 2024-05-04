@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Data Form</title>
 </head>
 <body>
-    <form action="../Metro-Nails/includes/processform.php" method="POST">
+    <form action="../includes/processform.php" method="POST">
         <label for="username">Name</label><br>
         <input type="text" id="username" name="username" required><br>
         <label for="phone">Phone</label><br>
